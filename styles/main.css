@@ -7,3 +7,287 @@ html,
 body {
   box-sizing: border-box;
 }
+
+:root {
+  --nav-bg-color: #1992d4;
+  --header-bg-color: #ffffff;
+  --font-head-color: #050505;
+  --page-bg-color: #e2e8f0;
+  --ribbon--color: #f0b429;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--page-bg-color);
+}
+
+.containor {
+  display: grid;
+  grid-template-areas:
+    "nav nav header header header header  header header header  header header header header"
+    "nav nav header header header header  header header header  header header header header"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main"
+    "nav nav main main main main main main main main main main main";
+}
+
+nav,
+header,
+main {
+  padding: 1rem;
+}
+
+/* Navigation section styling */
+nav {
+  grid-area: nav;
+  background-color: var(--nav-bg-color);
+  color: var(--header-bg-color);
+  font-size: 0.9rem;
+}
+
+nav h1 {
+  font-size: 2rem;
+}
+
+#nav-main-containor {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+#nav-main-containor .nav-sub-containor {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+#nav-main-containor .nav-sub-containor .item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 1rem;
+  text-transform: capitalize;
+  align-items: center;
+}
+
+nav img {
+  filter: invert(100%);
+}
+
+/* Header section */
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--header-bg-color);
+  gap: 1rem;
+}
+
+header .row {
+  display: grid;
+  grid-template-columns: 6fr 3fr;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.row .first-column {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-template-rows: 32px;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* search section */
+#search input {
+  max-width: 500px;
+  border-radius: 1rem;
+  outline: none;
+  border: 0;
+  background-color: var(--page-bg-color);
+  padding: 0 1rem;
+}
+
+#user_login {
+  display: grid;
+  grid-template-columns: 24px 40px auto;
+
+  align-items: center;
+  justify-content: space-around;
+}
+
+header .row img {
+  height: auto;
+  width: 100%;
+}
+
+#user_login h2 {
+  font-size: 1.25rem;
+}
+
+#user {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+#greeting_user {
+  display: flex;
+  flex-direction: column;
+}
+
+#made_post {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: 2.25rem;
+  gap: 1.25rem;
+}
+
+#made_post button {
+  all: unset;
+  background-color: var(--nav-bg-color);
+  color: var(--header-bg-color);
+  border-radius: 1.25rem;
+  text-align: center;
+}
+
+/* Main content area */
+main {
+  --description-text-color: #979797;
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "projects projects projects projects projects projects  projects announcement announcement"
+    "projects projects projects projects projects projects  projects announcement announcement"
+    "projects projects projects projects projects projects  projects announcement announcement"
+    "projects projects projects projects projects projects  projects announcement announcement"
+    "projects projects projects projects projects projects  projects announcement announcement"
+    "projects projects projects projects projects projects  projects trending trending"
+    "projects projects projects projects projects projects  projects trending trending"
+    "projects projects projects projects projects projects  projects trending trending"
+    "projects projects projects projects projects projects  projects trending trending";
+  gap: 1rem;
+}
+
+main p {
+  color: var(--description-text-color);
+}
+
+/* Projects section styling */
+#projects_area {
+  grid-area: projects;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  --row-size: 200px;
+  grid-template-rows: var(--row-size);
+  grid-auto-rows: var(--row-size);
+  gap: 1rem;
+}
+
+.project {
+  background-color: var(--header-bg-color);
+  padding: 1rem;
+  border-left: 6px solid var(--ribbon--color);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr 4fr 1fr;
+}
+
+.project .buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons button {
+  all: unset;
+  height: 24px;
+  width: 24px;
+}
+
+/* Styling for announcement */
+#announcements_area {
+  grid-area: announcement;
+}
+
+#announcement {
+  display: grid;
+  --row-size: 100px;
+  grid-template-columns: 250px;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  background-color: var(--header-bg-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.card:not(.card:first-child) {
+  padding-top: 1rem;
+}
+
+.card:not(.card:last-child) {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--description-text-color);
+}
+
+.card h3 {
+  font-size: 0.9rem;
+}
+
+.card p {
+  font-size: 0.75rem;
+}
+
+#trending_area {
+  grid-area: trending;
+}
+
+#users {
+  background-color: var(--header-bg-color);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user img {
+  height: auto;
+  width: 100%;
+}
+
+.user .user_details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user_details h3 {
+  font-size: 0.8rem;
+}
+
+.user_details p {
+  font-size: 0.8rem;
+  margin-top: -4px;
+}
