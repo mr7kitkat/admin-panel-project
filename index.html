@@ -6,6 +6,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./scripts/scripts.js" defer></script>
   </head>
   <body>
     <section class="containor">
@@ -16,7 +17,7 @@
             <input type="text" />
           </section>
           <section id="user_login" class="second-column">
-            <img src="./assets/icons/bell.png" alt="" />
+            <img src="./assets/icons/bell.png" alt="" id="notification" />
             <img src="./assets/icons/avatar.png" alt="" />
             <h2>Morgan Oakley</h2>
           </section>
@@ -38,7 +39,9 @@
         <section id="nav-main-containor">
           <section class="nav-sub-containor">
             <div class="item">
-              <img src="./assets/icons/dashboard.png" alt="" />
+              <button id="dashboard">
+                <img src="./assets/icons/dashboard.png" alt="" />
+              </button>
               <h1>Dashboard</h1>
             </div>
           </section>

@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
+  transition: 0.4s all ease;
 }
 
 html,
@@ -55,6 +57,10 @@ nav {
   font-size: 0.9rem;
 }
 
+nav #dashboard {
+  all: unset;
+}
+
 nav h1 {
   font-size: 2rem;
 }
@@ -84,6 +90,21 @@ nav h1 {
 
 nav img {
   filter: invert(100%);
+}
+
+nav.hide #nav-main-containor .nav-sub-containor .item {
+  grid-template-columns: 30px;
+  justify-content: center;
+  gap: 0rem;
+}
+
+nav.hide {
+  padding: 0.25rem;
+  padding-top: 1rem;
+}
+
+nav.hide .item > *:nth-child(2) {
+  display: none;
 }
 
 /* Header section */
@@ -290,4 +311,70 @@ main p {
 .user_details p {
   font-size: 0.8rem;
   margin-top: -4px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  header .row {
+    display: flex;
+    gap: 1rem;
+    width: min(400px, 75%);
+  }
+
+  #user_login > * {
+    display: none;
+  }
+
+  #user_login #notification {
+    display: initial;
+  }
+
+  #user {
+    grid-template-columns: 40px 1fr;
+  }
+
+  #user h2 {
+    font-size: 1.25rem;
+    margin-top: -8px;
+  }
+
+  #user span {
+    font-size: 0.7rem;
+  }
+
+  #made_post {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #made_post button {
+    width: 80px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  #user h2 {
+    font-size: 1rem;
+    margin-top: -8px;
+  }
+
+  #made_post button {
+    width: 60px;
+  }
 }
