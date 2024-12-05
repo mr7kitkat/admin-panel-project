@@ -24,13 +24,12 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--page-bg-color);
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: min(1550px, 100vw);
+  max-height: min(1550px, 100vh);
 }
 
 .containor {
-  max-width: min(100vw, 1550px);
-  max-height: min(100vh, 1280px);
   display: grid;
   grid-template-areas:
     "nav nav header header header header  header header header  header header header header"
