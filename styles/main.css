@@ -24,9 +24,13 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--page-bg-color);
+  display: flex;
+  justify-content: center;
 }
 
 .containor {
+  max-width: min(100vw, 1550px);
+  max-height: min(100vh, 1280px);
   display: grid;
   grid-template-areas:
     "nav nav header header header header  header header header  header header header header"
@@ -376,5 +380,11 @@ main p {
 
   #made_post button {
     width: 60px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #made_post {
+    display: none;
   }
 }
